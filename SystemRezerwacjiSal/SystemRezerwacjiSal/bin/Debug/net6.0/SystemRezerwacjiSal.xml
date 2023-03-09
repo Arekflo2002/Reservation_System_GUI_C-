@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SystemRezerwacjiSal</name>
+    </assembly>
+    <members>
+        <member name="T:SystemRezerwacjiSal.IManagingBuilding">
+            <summary>
+            Interfejs IManagingBuilding, definuje metody, ktore musza zostac zaimplementowane w klasie, ktora go uzywa
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SystemRezerwacjiSal.Building" -->
+        <member name="M:SystemRezerwacjiSal.Building.Adding_room(SystemRezerwacjiSal.Room)">
+            <summary>
+            Publiczna metoda, ktora dodaje podany pokoj do listy rooms_inbuilding
+            </summary>
+            <param name="r">Obiekt klasy Room</param>
+            <exception cref="T:System.Exception">Obiekt klasy Exception z komunikatem, jesli istnieje pokoj o takim samym numerze</exception>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.Removing_room(SystemRezerwacjiSal.Room)">
+            <summary>
+            Publiczna metoda, ktora usuwa konkretny pokoj z listy rooms_inbuilding
+            </summary>
+            <param name="r">Obiekt klasy Room</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.Clearing_allrooms">
+            <summary>
+            Publiczna metoda usuwajaca wszystkie obiekty z listy rooms_inbuilding
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.Sorting_roomsbynumber">
+            <summary>
+            Publiczna metoda sortujaca liste pokoii po ich numerach
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.Finding_roombynumber(System.Int32)">
+            <summary>
+            Publiczna metoda, ktora wyszukuje z listy pokoj o podanym numerze
+            </summary>
+            <param name="number">Numer pokoju (int)</param>
+            <returns>Zwraca pokoj o podanym numerze</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.check_postcode(System.String)">
+            <summary>
+            Publiczna metoda sprawdzajaca poprawnosc kodu pocztowego wedlug podanego schematu
+            </summary>
+            <param name="s">Kod pocztowy(string)</param>
+            <returns>True jak jest poprawny, False jesli zly</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.Listofrooms_Tostring">
+            <summary>
+            Prywatna metoda, ktora zamienia liste pokoii na jednego osobne stringi
+            </summary>
+            <returns>Zwraca wypisane pokoje z listy</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Building.ToString">
+            <summary>
+            Publiczna metoda nadpisujaca metode ToString
+            </summary>
+            <returns>Zwraca nazwe budynku(string)</returns>
+        </member>
+        <member name="T:SystemRezerwacjiSal.WrongConvertToEnumException">
+            <summary>
+            Publiczna klasa WrongConvertToEnumException, ktora dziedziczy po klasie exception
+            </summary>
+        </member>
+        <member name="T:SystemRezerwacjiSal.Client">
+            <summary>
+            Publiczna klasa Client, ktora dziedziczy po klasie Person
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Client.ToString">
+            <summary>
+            Publiczna metoda, ktora nadpisuje metode ToString
+            </summary>
+            <returns>Zwraca dane o kliencie, oraz informaje czy wyrazil zgode na przetwarzanie swoich danych</returns>
+        </member>
+        <member name="T:SystemRezerwacjiSal.IOperatingBuildingList">
+            <summary>
+            Interfejs IOperatingBuildingList, definuje metody, ktore musza zostac zaimplementowane w klasie, ktora go uzywa
+            </summary>
+        </member>
+        <member name="T:SystemRezerwacjiSal.IOperatingClientList">
+            <summary>
+            Interfejs IOperatingClientList, definuje metody, ktore musza zostac zaimplementowane w klasie, ktora go uzywa
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.#ctor">
+            <summary>
+            Konstruktor bazowy, inicjalizuje sie przy tworzeniu obiektu klasy DataBase
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Adding_building(SystemRezerwacjiSal.Building)">
+            <summary>
+            Publiczna metoda, dodaje obiekt klasy budynek do listof_buildings
+            </summary>
+            <param name="b">Obiekt klasy Building</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Removing_building(SystemRezerwacjiSal.Building)">
+            <summary>
+            Publiczna metoda, usuwa obiekt z listof_buildings
+            </summary>
+            <param name="b">Obiekt klasy Building</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.ClearingAll_buildings">
+            <summary>
+            Publiczna metoda, usuwa wszystkie obiekty z listy listof_buildings
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingBuilding_byaddress(System.String)">
+            <summary>
+            Publiczna metoda, szuka budynku o podanym adresie w liscie listof_buildings
+            </summary>
+            <param name="address">Adress budynku (string)</param>
+            <returns>Zwraca budynek o podanym adresie</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Adding_client(SystemRezerwacjiSal.Client)">
+            <summary>
+            Publiczna metoda, dodaje obiekt klasy Client do listy listof_clients
+            </summary>
+            <param name="c">Obiekt klasy Client</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Removing_client(SystemRezerwacjiSal.Client)">
+            <summary>
+            Publiczna metoda , usuwa obiekt z listy listof_clients
+            </summary>
+            <param name="c">Obiekt klasy Client</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.ClearingAll_clients">
+            <summary>
+            Publiczna metoda, usuwa wszystkie obiekty z listy listof_clients
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingClient_byPesel(System.String)">
+            <summary>
+            Publiczna metoda, szuka klienta po podanym numerze peselu
+            </summary>
+            <param name="p">Numer pesel (string)</param>
+            <returns>Zwraca klienta o podanym numerze peselu</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.SortingClients_byPesel">
+            <summary>
+            Publiczna metoda sortujaca liste clientow po peselu
+            </summary>
+            <returns>Zwraca posortowana liste klientow</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Adding_reservation(SystemRezerwacjiSal.Reservation)">
+            <summary>
+            Publiczna metoda dodajaca obiekt klasy Reservation do listy listof_reservations
+            </summary>
+            <param name="r">Obiekt klasy Reservation</param>
+            <exception cref="T:System.Exception">Komuniakt z klasy Exception</exception>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.Removing_reservation(SystemRezerwacjiSal.Reservation)">
+            <summary>
+            Publiczna metoda usuwajaca podany obiekt z listy listof_reservations
+            </summary>
+            <param name="r">Obiekt klasy Reservation</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.ClearingAll_reservation">
+            <summary>
+            Publiczna metoda, ktora usuwa wszystkie obiekty z listy listof_reservations
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.SortingReservations_byClientsPesel(System.Collections.Generic.List{SystemRezerwacjiSal.Reservation})">
+            <summary>
+            Publiczna metoda, ktora sortuje liiste listof_reservations po peselu klientow
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingReservations_byClient(System.String)">
+            <summary>
+            Publiczna metoda, ktora wyszukuje rezerwacje z listof_reservations po kliencie
+            </summary>
+            <param name="c">Obiekt klasy Client</param>
+            <returns>Zwraca liste rezerwacji danego klienta</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingReservations_byBookingDate(System.Nullable{System.DateTime})">
+            <summary>
+            Publiczna metoda, ktora wyszukuje rezerwacje z listof_reservations po ich dacie
+            </summary>
+            <param name="dt">Interesujaca nas data</param>
+            <returns>Zwraca liste rezerwacji o podanej dacie</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingReservations_byBuilding(System.String)">
+            <summary>
+            Publiczna metoda, ktora wyszukuje rezerwacje z listof_reservations po budynku
+            </summary>
+            <param name="b">Obiekt klasy Building</param>
+            <returns>Zwraca liste rezerwacji dla danego budynku</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.FindingReservations_byRoom(SystemRezerwacjiSal.Building,SystemRezerwacjiSal.Room)">
+            <summary>
+            Publiczna metoda, ktora korzysta z metody FindingReservations_byBuilding i wyszukuje rezerwacje dla podanej sali w budynku
+            </summary>
+            <param name="b">Obiekt klasy Building</param>
+            <param name="r">Obiekt klasy Room</param>
+            <returns>Zwraca liste rezerwacji przypadajacych na dana sale w konkretnym budynku</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.SaveXML(System.String)">
+            <summary>
+            Publiczna metoda, ktora pozwala zpaisac plik formacie XML
+            </summary>
+            <param name="fname">Nazwa pliku(string)</param>
+        </member>
+        <member name="M:SystemRezerwacjiSal.DataBase.OpenXML(System.String)">
+            <summary>
+            Pobranie danych z pliku o podanej nazwie do programu
+            </summary>
+            <param name="fname">Nazwa pliku(string)</param>
+            <returns>Zwraca dane zawierane w pliku</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Equipment.ToString">
+            <summary>
+            Publiczna metoda, nadpiusje metode ToString
+            </summary>
+            <returns>Zwraca informacje o dostepnosci rzeczy w pokoju </returns>
+        </member>
+        <member name="T:SystemRezerwacjiSal.InvalidPeselException">
+            <summary>
+            Publiczna klasa InvalidPeselException, ktora dziedziczy po klasie Exception
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.InvalidPeselException.#ctor">
+            <summary>
+            Konstruktor nieparametryczny korzystajacy z konstruktora klasy bazowej
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.InvalidPeselException.#ctor(System.String)">
+            <summary>
+            Konstruktor parametryczny korzystajacy z konstruktora klasy bazowej
+            </summary>
+        </member>
+        <member name="T:SystemRezerwacjiSal.InvalidPhoneException">
+            <summary>
+            Publiczna klasa InvalidPhoneException, ktora dziedzicy po klasie Exception
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Person.ToString">
+            <summary>
+            Nadpisanie metody ToString
+            </summary>
+            <returns>Zwraca dane o osobie(Imie,Nazwisko, Pesel,Numer telefonu)</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Person.Checking_Pesel(System.String)">
+            <summary>
+            Sprawdzajaca poprawnosc peselu
+            </summary>
+            <param name="p">Pesel osoby(string)</param>
+            <returns>True jesli poprawny, False jesli zly</returns>
+            <exception cref="T:SystemRezerwacjiSal.InvalidPeselException">Obiekt klasy InvalidPeselException, z komunikatem</exception>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Person.Checking_phoneNB(System.String)">
+            <summary>
+            Sprawdza poprawnosc numeru telefonu
+            </summary>
+            <param name="phone">Telefon osoby(string)</param>
+            <returns>True jesli poprawny, False jesli zly</returns>
+            <exception cref="T:SystemRezerwacjiSal.InvalidPhoneException">Obiekt klasy InvalidPhoneException, z komunikatem</exception>
+        </member>
+        <member name="T:SystemRezerwacjiSal.RoomNotExistingException">
+            <summary>
+            Publiczna klasa RoomNotExistingException, ktora dziedziczy po klasie exception
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Reservation.IsRoomInThisBuilding(SystemRezerwacjiSal.Room)">
+            <summary>
+            Prywatna metoda, ktora sprawdza czy dany pokoj znajduje sie w danym budynku
+            </summary>
+            <param name="b">Obiekt klasy Building</param>
+            <param name="r">Obiekt klasy Room</param>
+            <returns>True gdy dany pokoj istnieje w danym budynku,False jesli nie</returns>
+            <exception cref="T:SystemRezerwacjiSal.RoomNotExistingException">Obiekt klasy RoomNotExistingException z komunikatem</exception>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Reservation.IsDateCorrect(System.DateTime)">
+            <summary>
+            Prywatna metoda, ktora sprawdza czy data jest pozniejsza lub terazniejsza
+            </summary>
+            <param name="t">Data, ktora chcemy sprawdzic</param>
+            <returns>True jesli jest poprawna, komunikat jesli nie</returns>
+            <exception cref="T:SystemRezerwacjiSal.InvalidDataException"></exception>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Reservation.ToString">
+            <summary>
+            Publiczna metoda, ktora nadpisuje metode ToString
+            </summary>
+            <returns>Zwraca imie i nazwisko osoby oraz numer pokoju i date jej rezerwacji (string)</returns>
+        </member>
+        <member name="T:SystemRezerwacjiSal.InvalidNumberException">
+            <summary>
+            Publiczna klasa InvalidNumberException, ktora dziedziczy po klasie exception
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.InvalidNumberException.#ctor">
+            <summary>
+            Konstruktor nieparametryczny korzystajacy z konstruktora klasy bazowej
+            </summary>
+        </member>
+        <member name="M:SystemRezerwacjiSal.InvalidNumberException.#ctor(System.String)">
+            <summary>
+            Konstruktor parametryczny korzystajacy z konstruktora klasy bazowej
+            </summary>
+        </member>
+        <member name="T:SystemRezerwacjiSal.Room">
+            <summary>
+            Publiczna klasa Room dziedziczaca po klasie Equipment oraz interfejsie IClonable
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SystemRezerwacjiSal.Room.Checking_number(System.Int32)" -->
+        <member name="M:SystemRezerwacjiSal.Room.ToString">
+            <summary>
+            Publiczna metoda, nadpisanie metody ToString
+            </summary>
+            <returns>Zwraca wlasciwosc Number</returns>
+        </member>
+        <member name="M:SystemRezerwacjiSal.Room.Clone">
+            <summary>
+            Publiczna metoda pozwalajaca na stworzenie kopii obiektu klasy 
+            </summary>
+            <returns>Zwraca sklonowany obiekt klasy </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,5 @@
+D:\ProjektWłasnyDoCV_c\SystemRezerwacjiSal\SystemRezerwacjiSal\obj\Release\net6.0\SystemRezerwacjiSal.csproj.AssemblyReference.cache
+D:\ProjektWłasnyDoCV_c\SystemRezerwacjiSal\SystemRezerwacjiSal\obj\Release\net6.0\SystemRezerwacjiSal.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjektWłasnyDoCV_c\SystemRezerwacjiSal\SystemRezerwacjiSal\obj\Release\net6.0\SystemRezerwacjiSal.AssemblyInfoInputs.cache
+D:\ProjektWłasnyDoCV_c\SystemRezerwacjiSal\SystemRezerwacjiSal\obj\Release\net6.0\SystemRezerwacjiSal.AssemblyInfo.cs
+D:\ProjektWłasnyDoCV_c\SystemRezerwacjiSal\SystemRezerwacjiSal\obj\Release\net6.0\SystemRezerwacjiSal.csproj.CoreCompileInputs.cache
